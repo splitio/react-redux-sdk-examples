@@ -1,0 +1,4 @@
+module.exports = {
+  SPLIT_FEATURE_READ: 'SPLIT_FEATURE_READ',
+  SPLIT_READY: 'SPLIT_READY'
+};
