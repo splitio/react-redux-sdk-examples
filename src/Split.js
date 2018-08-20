@@ -14,9 +14,9 @@ const factory = SplitFactory({
 
 export const splitClient = factory.client();
 
-
 splitClient.on(splitClient.Event.SDK_READY, () => {
-const client2 = factory.client('<different-user-key>', '<different-traffic-type>'); // Traffic type setup is optional.
-
-  console.log(client2.getTreatment('advanced_editor'));
+  // You can instantiate a new client. Traffic type setup is optional here too.
+  const client2 = factory.client('<different-user-key>', '<different-traffic-type>'); 
+  // Do whatever with that client.
+  console.log(client2.getTreatment('<your-feature>'));
 });

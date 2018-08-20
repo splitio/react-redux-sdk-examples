@@ -5,6 +5,9 @@ import {
 import { getStore } from '../store';
 import { splitClient } from '../Split'; 
 
+// Add on the splitNames array the names of the features you want to evaluate.
+const splitNames = [/* your features */];
+
 splitClient.on(splitClient.Event.SDK_READY, () => {
   getStore().dispatch(notifyReady());
 });
@@ -24,7 +27,6 @@ function notifyReady() {
 
 function readTreatments() {
   return (dispatch, getState) => {
-    const splitNames = ['add_remove_key', 'advanced_editor'];
     const treatments = splitClient.getTreatments(splitNames);
 
     dispatch({ 
