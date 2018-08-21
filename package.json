@@ -5,6 +5,7 @@
   "dependencies": {
     "@splitsoftware/splitio": "^10.3.3",
     "lodash": "^4.17.10",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",

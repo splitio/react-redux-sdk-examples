@@ -4,19 +4,23 @@ import rootReducer from './reducers';
 
 let store = null;
 
-export function getStore() {
-  return store;
-}
-
+/**
+ * Configures the redux store and keeps a reference.
+ */
 function configureStore() {
   const storeInstance = createStore(
-   rootReducer,
+    rootReducer,
     applyMiddleware(thunk)
   );
 
   store = storeInstance;
   return storeInstance;
- }
+}
 
+function getStore() {
+  return store;
+}
 
-export default configureStore;
+configureStore();
+
+export default getStore;
