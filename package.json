@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@splitsoftware/splitio": "^10.3.3",
-    "lodash": "^4.17.10",
+    "@splitsoftware/splitio": "^10.6.0",
+    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

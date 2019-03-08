@@ -6,9 +6,6 @@ const factory = SplitFactory({
     key: '<example-user-key>',
     // Traffic type setup is optional, delete following line if you don't want that.
     trafficType: 'user'
-  },
-  scheduler: {
-    impressionsRefreshRate: 10
   }
 });
 
