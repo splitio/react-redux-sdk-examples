@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../logo.svg';
 import ListOfSplits from './ListOfSplits';
 import ToggleExample from './ToggleExample';
-import SplitAndCounter from './SplitAndCounter';
+import ExtractSplitData from './ExtractSplitData';
 
 export default function () {
   return (
@@ -36,10 +36,10 @@ export default function () {
         <h3 className="Section-header" ><i>connectToggler</i> example</h3>
         <ToggleExample />
       </div>
-      {/* Example of component using mapState function */}
+      {/* Example of component using mapStateToProps to extract Split and other data from the store */}
       <div className="App-section" >
         <h3 className="Section-header" ><i>mapStateToProps</i> example</h3>
-        <SplitAndCounter />
+        <ExtractSplitData />
       </div>
     </div>
   );

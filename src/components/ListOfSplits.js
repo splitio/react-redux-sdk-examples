@@ -2,7 +2,7 @@ import React from 'react'
 import { connectSplit, selectTreatmentValue, getSplitNames } from '@splitsoftware/splitio-redux'
 
 /**
- * This example showcasts `connectSplit` connector.
+ * This example shows `connectSplit` connector.
  * 
  * The following components print a list of splits (features) with their corresponting
  * treatment values (flags). The list of splits is obteined with `getSplitNames` function,

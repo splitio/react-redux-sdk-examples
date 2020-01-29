@@ -16,7 +16,8 @@ const store = createStore(
   combineReducers({
     splitio: splitReducer,
     /* You'll have your app reducers here too. 
-     * As an example, we include a vanilla counter reducer
+     * As an example we include a vanilla counter reducer, which is given as basic example
+     * in the Redux documentation (https://redux.js.org/introduction/examples#counter-vanilla)
      */
     counter: counterReducer
   }),

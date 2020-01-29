@@ -1,4 +1,10 @@
-export default (state = 0, action) => {
+/**
+ * The following reducer is based on the Counter Vanilla example provided in Redux documentation
+ * 
+ * @see{@link https://redux.js.org/introduction/examples#counter-vanilla}
+ */
+ 
+export default function counter(state = 0, action) {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1

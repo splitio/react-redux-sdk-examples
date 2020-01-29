@@ -1,4 +1,4 @@
-# Splitio-Redux SDK: Simple-Page App Example
+# Splitio-Redux SDK: Single-Page App Example
 
 This is a basic SPA example that demonstrate the use of `Splitio-Redux SDK`.
 
@@ -14,7 +14,9 @@ Follow these steps to run the example app:
     yarn
     ```
 
-- Optionally, update Split config at `src/sdkConfig.js` if you want to use your [Api key](https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK#2-instantiate-the-sdk-and-create-a-new-split-client) instead of running Split in [localhost mode](https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK#localhost-mode). The API key is available on your *Organization Settings* page, on the *APIs* tab. Choose the `browser` type.
+- Update Split config at `src/sdkConfig.js` to use your [Api key](https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK#2-instantiate-the-sdk-and-create-a-new-split-client). 
+The API key is available on your *Organization Settings* page, on the *APIs* tab. Choose the `browser` type. 
+Also update the value of `feature_x` constants with the name of your splits.
 
 - Start the app by running:
 

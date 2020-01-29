@@ -1,8 +1,9 @@
 import React from 'react';
-import { connectToggler } from '@splitsoftware/splitio-redux'
+import { connectToggler } from '@splitsoftware/splitio-redux';
+import { feature_name } from '../sdkConfig';
 
 /**
- * This example showcasts `connectToggler` connector.
+ * This example shows `connectToggler` connector.
  */
 
 const ComponentOn = () => {
@@ -13,5 +14,5 @@ const ComponentDefault = () => {
   return <div>OFF</div>;
 }
 
-/* This component renders ComponentOn if 'test_split' value is 'on', and ComponentDefault otherwise */
-export default connectToggler('test_split')(ComponentOn, ComponentDefault);
+/* This component renders ComponentOn if `feature_name` value is 'on', and ComponentDefault otherwise */
+export default connectToggler(feature_name)(ComponentOn, ComponentDefault);
