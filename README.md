@@ -1,6 +1,6 @@
 # Splitio-Redux SDK: Single-Page App Example
 
-This is a basic SPA example that demonstrate the use of `Splitio-Redux SDK`.
+This is a basic SPA example that demonstrate the use of [Split SDK for Redux](https://github.com/splitio/redux-client).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
