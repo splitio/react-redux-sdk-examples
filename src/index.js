@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { splitReducer, initSplitSdk, getTreatments, getSplitNames } from '@splitsoftware/splitio-redux'
+import { splitReducer, initSplitSdk, getTreatments } from '@splitsoftware/splitio-redux'
 
 import './index.css';
-import sdkConfig from './sdkConfig';
+import sdkConfig, { feature_name } from './sdkConfig';
 import App from './components/App';
 import counterReducer from './reducers/counter';
 
@@ -15,7 +15,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   combineReducers({
     splitio: splitReducer,
-    /* You'll have your app reducers here too. 
+    /* You'll have your app reducers here too.
      * As an example we include a vanilla counter reducer, which is given as basic example
      * in the Redux documentation (https://redux.js.org/introduction/examples#counter-vanilla)
      */
@@ -27,11 +27,13 @@ const store = createStore(
 /** Dispatch `initSplitSdk` to init Split SDK */
 store.dispatch(initSplitSdk({ config: sdkConfig })).then(() => {
   console.log('SDK initialized');
-
-  /** Once the SDK is ready, we dispatch a `getTreatments` action with all Splits in our workspace */
-  const splitNames = getSplitNames();
-  store.dispatch(getTreatments({ splitNames }));
 });
+
+/** Dispatch a `getTreatments` action to evaluate the given split names and
+ *  update their treatment values at the store once the SDK is ready. `evalOnUpdate`
+ *  flag is set in order to re-evaluated splits if their definitions are updated.
+ */
+store.dispatch(getTreatments({ splitNames: [feature_name], evalOnUpdate: true }));
 
 ReactDOM.render(
   <Provider store={store}>
