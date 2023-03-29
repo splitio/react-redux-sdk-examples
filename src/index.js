@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -35,9 +35,8 @@ store.dispatch(initSplitSdk({ config: sdkConfig })).then(() => {
  */
 store.dispatch(getTreatments({ splitNames: [feature_name], evalOnUpdate: true }));
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
