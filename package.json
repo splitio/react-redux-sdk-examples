@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@splitsoftware/splitio-redux": "^1.3.0",
+    "@splitsoftware/splitio-redux": "^1.7.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.0.0",
