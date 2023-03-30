@@ -4,7 +4,7 @@ import ListOfSplits from './ListOfSplits';
 import ToggleExample from './ToggleExample';
 import ExtractSplitData from './ExtractSplitData';
 
-export default function () {
+export default function App() {
   return (
     <div className='App'>
       <header className='App-header'>
