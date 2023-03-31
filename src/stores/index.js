@@ -1,24 +1,18 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { splitReducer, initSplitSdk, getTreatments } from '@splitsoftware/splitio-redux';
 
 import counterReducer from '../reducers/counter';
 
 /** Init Redux Store */
 export default function setupStore(sdkConfig, featureName) {
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  const store = createStore(
-    combineReducers({
+  // By using Redux Toolkit we don't need to explicitly specify `window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`
+  // as the store enhancers, or apply `thunk` middleware, as they are included by default.
+  const store = configureStore({
+    reducer: combineReducers({
       splitio: splitReducer,
-      /**
-       * You'll have your app reducers here too.
-       * As an example we include a vanilla counter reducer, which is given as basic example
-       * in the Redux documentation (https://redux.js.org/introduction/examples#counter-vanilla)
-       */
       counter: counterReducer
     }),
-    composeEnhancers(applyMiddleware(thunk))
-  );
+  });
 
   /** Dispatch `initSplitSdk` to init Split SDK */
   store.dispatch(initSplitSdk({ config: sdkConfig })).then(() => {
