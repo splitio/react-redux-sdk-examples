@@ -1,20 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { mapTreatmentToProps, mapIsFeatureOnToProps } from '@splitsoftware/splitio-redux';
-import { featureName } from '../sdkConfig';
+import { featureFlagName } from '../sdkConfig';
 
 /**
  * This example shows `mapTreatmentToProps` and `mapIsFeatureOnToProps` functions.
  * With them, we define a custom `mapStateToProps` function used to extract different
- * pieces of data from the store: the `counter` value, Split tratments and its `isReady` status.
+ * pieces of data from the store: the `counter` value, `feature` flag treatment and its `isReady` status.
  */
 
-function ExtractSplitData({ counter, isReady, feature, isFeatureOn }) {
+function ExtractFeatureFlagData({ counter, isReady, feature, isFeatureOn }) {
   return (
     <div>
       <p>{isReady ? 'SDK is ready' : 'SDK is not ready'}</p>
-      <p>{`${featureName} is ${feature}`}</p>
-      <p>{`is ${featureName} 'on' ? ${isFeatureOn}`}</p>
+      <p>{`Feature flag ${featureFlagName} is ${feature}`}</p>
+      <p>{`is ${featureFlagName} 'on' ? ${isFeatureOn}`}</p>
       <p>{counter}</p>
     </div>
   )
@@ -22,11 +22,11 @@ function ExtractSplitData({ counter, isReady, feature, isFeatureOn }) {
 
 // The following function returns an object with the following format:
 // { isFeatureOn: true|false }
-const mapTestSplitToProps = mapTreatmentToProps(featureName);
+const mapTestSplitToProps = mapTreatmentToProps(featureFlagName);
 
 // The following function returns an object with the following format:
 // { feature: '<treatment value>' }
-const mapIsTestSplitToProps = mapIsFeatureOnToProps(featureName);
+const mapIsTestSplitToProps = mapIsFeatureOnToProps(featureFlagName);
 
 const mapStateToProps = (state) => {
   return {
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ExtractSplitData);
+export default connect(mapStateToProps)(ExtractFeatureFlagData);

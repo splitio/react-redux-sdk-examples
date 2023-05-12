@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../logo.svg';
-import ListOfSplits from './ListOfSplits';
+import ListOfFeatures from './ListOfFeatures';
 import ToggleExample from './ToggleExample';
-import ExtractSplitData from './ExtractSplitData';
+import ExtractFeatureFlagData from './ExtractFeatureFlagData';
 
 export default function App() {
   return (
@@ -24,22 +24,22 @@ export default function App() {
         Take a look at the source code for more guidance.
       </div>
       <div className='App-intro'>
-        Change the SDK config at <i>sdkConfig.js</i> and watch the list of splits updated.
+        Change the SDK config at <i>sdkConfig.js</i> and watch the list of feature flags updated.
       </div>
       {/* Example of component using connectSplit HOC */}
       <div className='App-section' >
         <h3 className='Section-header' ><i>connectSplit</i> example</h3>
-        <ListOfSplits />
+        <ListOfFeatures />
       </div>
       {/* Example of component using connectToggler HOC */}
       <div className='App-section' >
         <h3 className='Section-header' ><i>connectToggler</i> example</h3>
         <ToggleExample />
       </div>
-      {/* Example of component using mapStateToProps to extract Split and other data from the store */}
+      {/* Example of component using mapStateToProps to extract feature flags and other data from the store */}
       <div className='App-section' >
         <h3 className='Section-header' ><i>mapStateToProps</i> example</h3>
-        <ExtractSplitData />
+        <ExtractFeatureFlagData />
       </div>
     </div>
   );
