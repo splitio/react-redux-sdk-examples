@@ -17,14 +17,14 @@ const config = {
     key: 'some_key',
   },
   features: {
-    'test_split': 'on', // example with just a string value for the treatment
-    'test_split-off': { treatment: 'off', config: '{ "color": "blue" }' }, //example of a defined config
+    'test_feature_flag': 'on', // example with just a string value for the treatment
+    'test_feature_flag-off': { treatment: 'off', config: '{ "color": "blue" }' }, //example of a defined config
   }
 };
 
 describe('App', () => {
   test('renders the correct treatment', async () => {
-    const store = setupStore(config, 'test_split');
+    const store = setupStore(config, 'test_feature_flag');
 
     render(
       <Provider store={store}>
@@ -34,11 +34,11 @@ describe('App', () => {
 
     // On the initial rendered output, the SDK is not ready. So treatment values are control.
     expect(screen.getByText('SDK is not ready')).toBeInTheDocument();
-    expect(screen.getByText('test_split is control')).toBeInTheDocument();
+    expect(screen.getByText('test_feature_flag is control')).toBeInTheDocument();
 
     // In localhost mode, the SDK is ready on next event-loop tick and the component re-rendered with the mocked treatment.
     // So we use `findByText` to wait for the component to update.
     expect(await screen.findByText('SDK is ready')).toBeInTheDocument();
-    expect(await screen.findByText('test_split is on')).toBeInTheDocument();
+    expect(await screen.findByText('test_feature_flag is on')).toBeInTheDocument();
   });
 });

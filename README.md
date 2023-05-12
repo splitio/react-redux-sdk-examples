@@ -14,9 +14,9 @@ Follow these steps to run the example app:
     npm install
     ```
 
-- Update Split config at `src/sdkConfig.js` to use your [API key](https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK#2-instantiate-the-sdk-and-create-a-new-split-client).
-The API key is available on your *Organization Settings* page, on the *APIs* tab. Choose the `client-side` type.
-Also update the value of `feature_x` constants with the name of your splits.
+- Update Split config at `src/sdkConfig.js` to use your [SDK key](https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK#2-instantiate-the-sdk-and-create-a-new-split-client).
+The SDK key is available on the Split user interface, in your *Admin Settings* page, under the *API keys* tab and the *SDK API keys* sub-tab. Choose the `client-side` type.
+Also update the value of `featureFlagName` constant with the name of your feature flag.
 
 - Start the app by running:
 

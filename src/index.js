@@ -6,9 +6,9 @@ import './index.css';
 import App from './components/App';
 
 import setupStore from './stores';
-import { config, featureName } from './sdkConfig';
+import { config, featureFlagName } from './sdkConfig';
 
-const store = setupStore(config, featureName);
+const store = setupStore(config, featureFlagName);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>

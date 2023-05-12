@@ -3,7 +3,7 @@ import { connectSplit, selectTreatmentValue, getSplitNames } from '@splitsoftwar
 
 /**
  * This example shows `connectSplit` connector.
- * 
+ *
  * The following components print a list of splits (features) with their corresponting
  * treatment values (flags). The list of splits is obteined with `getSplitNames` function,
  * and treatment values are accessed from the state with `selectTreatmentValue` selector.
