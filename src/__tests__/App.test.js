@@ -34,11 +34,11 @@ describe('App', () => {
 
     // On the initial rendered output, the SDK is not ready. So treatment values are control.
     expect(screen.getByText('SDK is not ready')).toBeInTheDocument();
-    expect(screen.getByText('test_feature_flag is control')).toBeInTheDocument();
+    expect(screen.getByText('Feature flag test_feature_flag is control')).toBeInTheDocument();
 
     // In localhost mode, the SDK is ready on next event-loop tick and the component re-rendered with the mocked treatment.
     // So we use `findByText` to wait for the component to update.
     expect(await screen.findByText('SDK is ready')).toBeInTheDocument();
-    expect(await screen.findByText('test_feature_flag is on')).toBeInTheDocument();
+    expect(await screen.findByText('Feature flag test_feature_flag is on')).toBeInTheDocument();
   });
 });
