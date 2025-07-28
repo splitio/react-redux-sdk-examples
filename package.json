@@ -4,12 +4,13 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
-    "@splitsoftware/splitio-redux": "^2.0.0",
+    "@splitsoftware/splitio-redux": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",

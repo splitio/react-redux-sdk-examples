@@ -10,9 +10,9 @@ Follow these steps to run the example app:
 
 - Install dependencies
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
 
 - Update Split config at `src/sdkConfig.js` to use your [SDK key](https://help.split.io/hc/en-us/articles/360020448791-JavaScript-SDK#2-instantiate-the-sdk-and-create-a-new-split-client).
 The SDK key is available on the Split user interface, in your *Admin Settings* page, under the *API keys* tab and the *SDK API keys* sub-tab. Choose the `client-side` type.
@@ -20,9 +20,9 @@ Also update the value of `featureFlagName` constant with the name of your featur
 
 - Start the app by running:
 
-    ```bash
-    npm run start
-    ```
+```bash
+npm run start
+```
 
 ## Available Scripts
 
